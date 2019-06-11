@@ -23,8 +23,10 @@ export const GoalEdit = props => (
     <TabbedForm redirect="edit">
       <FormTab label="Goal">
         <TextInput source="title"/>
-        <LongTextInput source="end_state_description"/>
+        <TextInput source="stative_verb"/>
+        <TextInput source="status"/>
         <DateInput source="target_date"/>
+        <LongTextInput source="end_state_description"/>
         <BooleanInput source="complete"/>
         <DateField source="created_date"/>
         <DateField source="updated_date"/>

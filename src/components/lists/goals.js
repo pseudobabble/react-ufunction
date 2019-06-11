@@ -63,8 +63,10 @@ export const GoalList = props => (
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <TextField source="title" />
-      <TextField source="end_state_description" />
+      <TextField source="stative_verb" />
+      <TextField source="status" />
       <DateField source="target_date" />
+      <TextField source="end_state_description" />
       <BooleanField source="complete" />
       <DateField source="created_date" />
       <DateField source="updated_date" />
