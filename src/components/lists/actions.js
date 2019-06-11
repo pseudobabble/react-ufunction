@@ -9,6 +9,7 @@ import {
   ArrayField,
   SingleFieldList,
   ChipField,
+  ReferenceField,
   CardActions,
   CreateButton,
   ExportButton,
@@ -63,8 +64,11 @@ export const ActionList = props => (
   <List {...props} actions={<ActionActions />}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
-      <UrlField source="goal" />
-      <TextField source="action_name" />
+      <ReferenceField label="goal" source="goal" reference="goals">
+        <UrlField source="title"/>
+      </ReferenceField>
+      <TextField source="action_verb" />
+      <TextField source="activity" />
       <NumberField source="target_metric" />
       <TextField source="target_metric_unit" />
       <DateField source="created_date" />

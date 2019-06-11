@@ -18,14 +18,19 @@ import {
 // Figure out why the id links arent working... -> I think it is because i had JS style // comments in the react component
 export const ActionEdit = props => (
   <Edit {...props}>
-    <TabbedForm redirect="edit">
+    <TabbedForm redirect="list">
       <FormTab label="Action">
         <ReferenceField label="goal" source="goal" reference="goals">
           <TextField source="title"/>
         </ReferenceField>
-        <TextInput source="action_name"/>
+        <SelectInput source="action_verb" choices={[
+          { id: 'Increase', name: 'Increase' },
+          { id: 'Reduce', name: 'Reduce' },
+          { id: 'Maintain', name: 'Maintain' },
+        ]}/>
+        <TextInput source="activity"/>
         <NumberInput source="target_metric"/>
-        <NumberInput source="target_metric_unit"/>
+        <TextInput source="target_metric_unit"/>
         <DateField source="created_date"/>
         <DateField source="updated_date"/>
       </FormTab>

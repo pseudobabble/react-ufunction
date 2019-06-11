@@ -35,7 +35,8 @@ export const GoalEdit = props => (
       <FormTab label="Actions">
         <ReferenceManyField label="Actions" reference="actions" target="goal">
         <Datagrid> // The following input fields are *working*, but being cleared instantly, see https://stackoverflow.com/questions/52247855/react-admin-edit-form-not-prefilled-with-existing-attributes
-          <TextField source="action_name"/>
+          <TextField source="action_verb"/>
+          <TextField source="activity"/>
           <NumberField source="target_metric"/>
           <TextField source="target_metric_unit"/>
           <DateField source="created_date"/>
