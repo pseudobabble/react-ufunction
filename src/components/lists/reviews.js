@@ -4,6 +4,7 @@ import {
   Datagrid,
   TextField,
   DateField,
+  ReferenceField,
   CardActions,
   CreateButton,
   ExportButton,
@@ -56,7 +57,9 @@ export const ReviewList = props => (
   <List {...props} actions={<ReviewActions />}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
-      <TextField source="goal" />
+      <ReferenceField label="goal" source="goal" reference="goals">
+        <TextField source="title"/>
+      </ReferenceField>
       <TextField source="review_period" />
       <DateField source="review_period_start_date" />
       <DateField source="review_period_end_date" />

@@ -6,6 +6,7 @@ import {
   BooleanField,
   DateField,
   NumberField,
+  ReferenceField,
   CardActions,
   CreateButton,
   ExportButton,
@@ -58,7 +59,9 @@ export const RewardList = props => (
   <List {...props} actions={<RewardActions />}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
-      <TextField source="goal" />
+      <ReferenceField label="goal" source="goal" reference="goals">
+        <TextField source="title"/>
+      </ReferenceField>
       <TextField source="reward_title" />
       <TextField source="reward_description" />
       <NumberField source="achievement_metric" />
