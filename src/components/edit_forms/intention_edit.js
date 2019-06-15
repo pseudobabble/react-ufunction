@@ -5,7 +5,7 @@ import {
   FormTab,
   SelectInput,
   TextInput,
-  DateInput,
+  ReferenceField,
   TextField,
   DateField,
   NumberField,
@@ -20,7 +20,9 @@ export const IntentionEdit = props => (
     <TabbedForm redirect="edit">
       <FormTab label="Intention">
         <NumberField source="id"/>
-        <SelectInput source="action"/>
+        <ReferenceField label="action" source="action" reference="actions">
+          <TextField source="id"/>
+        </ReferenceField>
         <TextInput source="intention_text"/>
         <NumberInput source="intended_metric"/>
         <TextInput source="enjoyable_aspects"/>

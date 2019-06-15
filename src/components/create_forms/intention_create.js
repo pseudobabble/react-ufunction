@@ -3,7 +3,8 @@ import {
   Create,
   TabbedForm,
   FormTab,
-  SelectInput,
+  SelectField,
+  ReferenceField,
   TextInput,
   LongTextInput,
   NumberInput,
@@ -13,7 +14,9 @@ export const IntentionCreate = props => (
   <Create {...props}>
     <TabbedForm redirect="edit">
       <FormTab label="Intention">
-        <SelectInput source="action"/>
+        <ReferenceField label="action" source="action" reference="actions">
+          <SelectField source="activity"/>
+        </ReferenceField>
         <TextInput source="intention_text"/>
         <NumberInput source="intended_metric"/>
         <LongTextInput source="enjoyable_aspects"/>

@@ -6,6 +6,8 @@ import {
   SelectInput,
   NumberField,
   TextInput,
+  TextField,
+  ReferenceField,
   DateInput,
   NumberInput,
 } from 'react-admin';
@@ -15,7 +17,9 @@ export const MeasurementEdit = props => (
     <TabbedForm redirect="edit">
       <FormTab label="Measurement">
         <NumberField source="id"/>
-        <SelectInput source="action"/>
+        <ReferenceField label="action" source="action" reference="actions">
+          <TextField source="id"/>
+        </ReferenceField>
         <SelectInput source="intention"/>
         <NumberInput source="outcome_metric"/>
         <TextInput source="enjoyable_aspects"/>

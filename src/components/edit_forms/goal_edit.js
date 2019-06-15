@@ -14,7 +14,9 @@ import {
   Datagrid,
   ReferenceManyField,
   EditButton,
+  DeleteButton
 } from 'react-admin';
+import AddActionButton from "../buttons/add_action_button";
 
 // The associated action records will be un-editable (until I figure out how to stop the fields from being wiped)
 // each will have an edit button which takes the user to its edit screen
@@ -42,8 +44,10 @@ export const GoalEdit = props => (
           <DateField source="created_date"/>
           <DateField source="updated_date"/>
           <EditButton/>
+          <DeleteButton/>
         </Datagrid>
         </ReferenceManyField>
+        <AddActionButton/>
       </FormTab>
 
       <FormTab label="Reviews">
@@ -59,6 +63,7 @@ export const GoalEdit = props => (
             <DateField source="created_date"/>
             <DateField source="updated_date"/>
             <EditButton/>
+            <DeleteButton/>
           </Datagrid>
         </ReferenceManyField>
       </FormTab>
@@ -73,6 +78,7 @@ export const GoalEdit = props => (
             <DateField source="created_date"/>
             <DateField source="updated_date"/>
             <EditButton/>
+            <DeleteButton/>
           </Datagrid>
         </ReferenceManyField>
       </FormTab>
