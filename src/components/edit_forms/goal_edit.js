@@ -17,6 +17,8 @@ import {
   DeleteButton
 } from 'react-admin';
 import AddActionButton from "../buttons/add_action_button";
+import AddReviewButton from "../buttons/add_review_button";
+import AddRewardButton from "../buttons/add_reward_button";
 
 // The associated action records will be un-editable (until I figure out how to stop the fields from being wiped)
 // each will have an edit button which takes the user to its edit screen
@@ -66,6 +68,7 @@ export const GoalEdit = props => (
             <DeleteButton/>
           </Datagrid>
         </ReferenceManyField>
+        <AddReviewButton/>
       </FormTab>
 
       <FormTab label="Rewards">
@@ -81,6 +84,7 @@ export const GoalEdit = props => (
             <DeleteButton/>
           </Datagrid>
         </ReferenceManyField>
+        <AddRewardButton/>
       </FormTab>
     </TabbedForm>
   </Edit>

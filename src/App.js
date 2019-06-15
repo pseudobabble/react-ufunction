@@ -14,6 +14,8 @@ import { GoalCreate } from "./components/create_forms/goal_create";
 import { ActionCreate } from "./components/create_forms/action_create";
 import { IntentionCreate } from "./components/create_forms/intention_create";
 import { MeasurementCreate } from "./components/create_forms/measurement_create";
+import { ReviewCreate } from "./components/create_forms/review_create";
+import { RewardCreate } from "./components/create_forms/reward_create";
 
 import { GoalEdit } from "./components/edit_forms/goal_edit";
 import { ActionEdit } from "./components/edit_forms/action_edit";
@@ -49,12 +51,12 @@ const App = () => (
             />
             <Resource name="reviews"
                       list={ReviewList}
-                      create={EditGuesser}
+                      create={ReviewCreate}
                       edit={ReviewEdit}
             />
             <Resource name="rewards"
                       list={RewardList}
-                      create={EditGuesser}
+                      create={RewardCreate}
                       edit={RewardEdit}
             />
         </Admin>
