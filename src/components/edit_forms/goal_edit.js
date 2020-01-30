@@ -8,13 +8,15 @@ import {
   BooleanInput,
   BooleanField,
   DateInput,
+  SelectInput,
   TextField,
   DateField,
   NumberField,
   Datagrid,
   ReferenceManyField,
   EditButton,
-  DeleteButton
+  DeleteButton,
+  ShowButton
 } from 'react-admin';
 import AddActionButton from "../buttons/add_action_button";
 import AddReviewButton from "../buttons/add_review_button";
@@ -26,11 +28,14 @@ export const GoalEdit = props => (
   <Edit {...props}>
     <TabbedForm redirect="edit">
       <FormTab label="Goal">
-        <TextInput source="title"/>
-        <TextInput source="stative_verb"/>
-        <TextInput source="status"/>
+        <TextField source="title" fullWidth/>
+        <SelectInput source="stative_verb" choices={[
+          {id: 'Be', name: 'Be'},
+          {id: 'Have', name: 'Have'}
+        ]}/>
+        <TextInput source="status" fullWidth/>
         <DateInput source="target_date"/>
-        <LongTextInput source="end_state_description"/>
+        <LongTextInput source="end_state_description" fullWidth/>
         <BooleanInput source="complete"/>
         <DateField source="created_date"/>
         <DateField source="updated_date"/>
@@ -38,14 +43,14 @@ export const GoalEdit = props => (
 
       <FormTab label="Actions">
         <ReferenceManyField label="Actions" reference="actions" target="goal">
-        <Datagrid> // The following input fields are *working*, but being cleared instantly, see https://stackoverflow.com/questions/52247855/react-admin-edit-form-not-prefilled-with-existing-attributes
+        <Datagrid>
           <TextField source="action_verb"/>
           <TextField source="activity"/>
           <NumberField source="target_metric"/>
           <TextField source="target_metric_unit"/>
           <DateField source="created_date"/>
           <DateField source="updated_date"/>
-          <EditButton/>
+          <EditButton />
           <DeleteButton/>
         </Datagrid>
         </ReferenceManyField>
@@ -54,7 +59,7 @@ export const GoalEdit = props => (
 
       <FormTab label="Reviews">
         <ReferenceManyField label="Reviews" reference="reviews" target="goal">
-          <Datagrid> // The following input fields are *working*, but being cleared instantly, see https://stackoverflow.com/questions/52247855/react-admin-edit-form-not-prefilled-with-existing-attributes
+          <Datagrid>
             <TextField source="review_period"/>
             <DateField source="review_period_start_date"/>
             <DateField source="review_period_end_date"/>
@@ -73,7 +78,7 @@ export const GoalEdit = props => (
 
       <FormTab label="Rewards">
         <ReferenceManyField label="Rewards" reference="rewards" target="goal">
-          <Datagrid> // The following input fields are *working*, but being cleared instantly, see https://stackoverflow.com/questions/52247855/react-admin-edit-form-not-prefilled-with-existing-attributes
+          <Datagrid>
             <TextField source="reward_title"/>
             <TextField source="reward_description"/>
             <NumberField source="achievement_metric"/>

@@ -15,13 +15,14 @@ import {
   EditButton,
 } from 'react-admin';
 
+
 export const IntentionEdit = props => (
   <Edit {...props}>
     <TabbedForm redirect="edit">
       <FormTab label="Intention">
         <NumberField source="id"/>
         <ReferenceField label="action" source="action" reference="actions">
-          <TextField source="id"/>
+          <TextField source="action_verb"/>
         </ReferenceField>
         <TextInput source="intention_text"/>
         <NumberInput source="intended_metric"/>

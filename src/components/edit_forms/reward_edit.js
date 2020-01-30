@@ -16,11 +16,11 @@ export const RewardEdit = props => (
   <Edit {...props} redirect="edit">
     <TabbedForm>
       <FormTab label="Reward">
-        <ReferenceField label="goal" source="goal" reference="goals">
-          <TextField source="title"/>
+        <ReferenceField label="goal" source="goal" reference="goals" fullWidth>
+          <TextField source="title" fullWidth/>
         </ReferenceField>
         <TextInput source="reward_title"/>
-        <LongTextInput source="reward_description"/>
+        <LongTextInput source="reward_description" fullWidth/>
         <NumberInput source="achievement_metric"/>
         <BooleanInput source="obtained"/>
         <DateField source="created_date"/>

@@ -13,7 +13,8 @@ import {
   CardActions,
   CreateButton,
   ExportButton,
-  RefreshButton
+  RefreshButton,
+  DeleteButton
 } from 'react-admin';
 
 
@@ -65,7 +66,7 @@ export const ActionList = props => (
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <ReferenceField label="goal" source="goal" reference="goals">
-        <UrlField source="title"/>
+        <TextField source="title"/>
       </ReferenceField>
       <TextField source="action_verb" />
       <TextField source="activity" />
@@ -78,6 +79,7 @@ export const ActionList = props => (
           <ChipField source="id" reference="intentions"/>
         </SingleFieldList>
       </ArrayField>
+      <DeleteButton/>
     </Datagrid>
   </List>
 );

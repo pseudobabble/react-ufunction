@@ -15,7 +15,9 @@ import {
   EditButton,
 } from 'react-admin';
 
-// Figure out why the id links arent working... -> I think it is because i had JS style // comments in the react component
+import AddIntentionButton from "../buttons/add_intention_button";
+import AddMeasurementButton from "../buttons/add_measurement_button";
+
 export const ActionEdit = props => (
   <Edit {...props}>
     <TabbedForm redirect="list">
@@ -47,6 +49,7 @@ export const ActionEdit = props => (
             <EditButton/>
           </Datagrid>
         </ReferenceManyField>
+        <AddIntentionButton/>
       </FormTab>
 
       <FormTab label="Measurements">
@@ -63,6 +66,7 @@ export const ActionEdit = props => (
             <EditButton/>
           </Datagrid>
         </ReferenceManyField>
+        <AddMeasurementButton/>
       </FormTab>
     </TabbedForm>
   </Edit>

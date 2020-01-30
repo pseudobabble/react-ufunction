@@ -11,7 +11,8 @@ import {
   CardActions,
   CreateButton,
   ExportButton,
-  RefreshButton
+  RefreshButton,
+  DeleteButton
 } from 'react-admin';
 
 
@@ -72,6 +73,7 @@ export const GoalList = props => (
       <DateField source="updated_date" />
       // Do I want this actions list here? Maybe just a count of the actions
       <ArrayField source="actions"><SingleFieldList><ChipField source="id" /></SingleFieldList></ArrayField>
+      <DeleteButton/>
     </Datagrid>
   </List>
 );

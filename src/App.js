@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchUtils, Admin, Resource, EditGuesser, ListGuesser} from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import './App.css';
 import drfProvider from 'ra-data-drf';
 
@@ -24,11 +24,15 @@ import { MeasurementEdit } from "./components/edit_forms/measurement_edit";
 import { ReviewEdit } from "./components/edit_forms/review_edit";
 import { RewardEdit } from "./components/edit_forms/reward_edit";
 
+
+import Dashboard from './components/dashboard/dashboard';
+import MyLayout from "./components/layout/layout";
+
 const dataProvider = drfProvider('http://127.0.0.1:8000');
 
 
 const App = () => (
-      <Admin dataProvider={dataProvider}>
+      <Admin dataProvider={dataProvider} dashboard={Dashboard} layout={MyLayout}>
             <Resource name="goals"
                       list={GoalList}
                       create={GoalCreate}
