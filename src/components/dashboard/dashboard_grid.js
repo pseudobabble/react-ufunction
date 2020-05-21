@@ -1,7 +1,8 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Example from "./charts/example";
-import {CardContent} from "@material-ui/core";
+import GoalProgress from "./charts/goal_progress";
+import { CardContent } from "@material-ui/core";
 
 export default function DashboardGrid() {
 
@@ -9,7 +10,7 @@ export default function DashboardGrid() {
   const get_grid_items_markup = chart_data_object => (
     <CardContent>
       <Grid item xs={3} key={chart_data_object}>
-      <Example/>
+      <GoalProgress/>
     </Grid>
     </CardContent>
   );

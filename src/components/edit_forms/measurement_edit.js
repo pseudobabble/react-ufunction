@@ -8,11 +8,13 @@ import {
   TextInput,
   TextField,
   ReferenceField,
+  ReferenceInput,
   DateInput,
   NumberInput,
 } from 'react-admin';
 
 const actionOptionRenderer = source => `${source.action_verb} ${source.activity} ${source.target_metric} ${source.target_metric_unit}`;
+const intentionOptionRenderer = source => `${source.id}: ${source.intention_text}`; // todo: need to get target metric unit
 
 export const MeasurementEdit = props => (
   <Edit {...props}>
@@ -23,7 +25,9 @@ export const MeasurementEdit = props => (
           <TextField source="activity"/>
         </ReferenceField>
         {/* This should use the Action virtual property */}
-        <SelectInput source="intention"/>
+        <ReferenceField label="intention" source="intention" reference="intentions">
+          <TextField source="intention_text"/>
+        </ReferenceField>
         <NumberInput source="outcome_metric"/>
         <TextInput source="enjoyable_aspects" fullWidth/>
         <TextInput source="difficult_aspects" fullWidth/>

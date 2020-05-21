@@ -38,7 +38,7 @@ export const ActionEdit = props => (
       </FormTab>
 
       <FormTab label="Intentions">
-        <ReferenceManyField label="Intentions" reference="intentions" target="action">
+        <ReferenceManyField label="Intentions" reference="intentions" target="goal">
           <Datagrid>
             <NumberField source="action"/>
             <TextField source="intention_text"/>
@@ -53,7 +53,7 @@ export const ActionEdit = props => (
       </FormTab>
 
       <FormTab label="Measurements">
-        <ReferenceManyField label="Measurements" reference="measurements" target="action">
+        <ReferenceManyField label="Measurements" reference="measurements" target="goal">
           <Datagrid>
             <NumberField source="action"/>
             <NumberField source="intention"/>

@@ -12,9 +12,11 @@ import {
   CreateButton,
   ExportButton,
   RefreshButton,
-  DeleteButton
+  DeleteButton,
+  NumberField
 } from 'react-admin';
 
+import { GoalFilters } from './filters/GoalFilters';
 
 const GoalActions = ({
                        bulkActions,
@@ -58,21 +60,25 @@ const GoalActions = ({
   </CardActions>
 );
 
-
+// TODO REFACTOR 20/05/2020 09:09: This list should only show parents
 export const GoalList = props => (
   <List {...props} actions={<GoalActions />}>
     <Datagrid rowClick="edit">
       <TextField source="id" />
+      <TextField source="is_parent" />
       <TextField source="title" />
-      <TextField source="stative_verb" />
-      <TextField source="status" />
+      <TextField source="verb" />
+      <TextField source="verb_phrase" />
       <DateField source="target_date" />
       <TextField source="end_state_description" />
+      <NumberField source="urgency" />
+      <NumberField source="importance" />
+      <NumberField source="eisenhower_score" />
       <BooleanField source="complete" />
       <DateField source="created_date" />
       <DateField source="updated_date" />
-      // Do I want this actions list here? Maybe just a count of the actions
-      <ArrayField source="actions"><SingleFieldList><ChipField source="id" /></SingleFieldList></ArrayField>
+      {/*// todo Do I want this actions list here? Maybe just a count of the subgoals*/}
+      {/*<ArrayField source="actions"><SingleFieldList><ChipField source="id" /></SingleFieldList></ArrayField>*/}
       <DeleteButton/>
     </Datagrid>
   </List>
