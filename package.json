@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
+    "@vx/text": "^0.0.196",
     "axios": "^0.19.2",
     "prop-types": "^15.7.2",
     "query-string": "^6.10.1",

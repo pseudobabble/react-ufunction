@@ -62,14 +62,60 @@ const data = {
 };
 
 export class NewGoalTree extends React.Component {
-  state = {
-    layout: 'cartesian',
-    orientation: 'horizontal',
-    linkType: 'diagonal',
-    stepPercent: 0.5
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      layout: 'cartesian',
+      orientation: 'horizontal',
+      linkType: 'diagonal',
+      stepPercent: 0.5,
+      error: null,
+      isLoaded: false,
+      data: []
+    };
+
+    console.log('constructor')
+    console.log('State After:', this.state)
+  }
+
+
+  componentDidMount() {
+    fetch("http://127.0.0.1:8000/goals/14")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            data: result,
+            translate: {
+              x: 20,
+              y: 20
+            }
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+
+    console.log('componentDidMount')
+    console.log('State After:', this.state)
+  }
 
   render() {
+
+    console.log('componentDidMount')
+    console.log('State Before:', this.state)
+
+    const {error, isLoaded, data} = this.state;
+
+
     const {
       width,
       height,
@@ -89,6 +135,12 @@ export class NewGoalTree extends React.Component {
     let origin;
     let sizeWidth;
     let sizeHeight;
+
+    const node_height = 20;
+
+
+
+    // let wrap20 = (s) => wrap(s, 20)
 
     if (layout === 'polar') {
       origin = {
@@ -162,7 +214,7 @@ export class NewGoalTree extends React.Component {
           <rect width={width} height={height} rx={14} fill="#272b4d" />
           <Group top={margin.top} left={margin.left}>
             <Tree
-              root={hierarchy(data, d => (d.isExpanded ? null : d.children))}
+              root={hierarchy(data, d => (d.isExpanded ? null : d.subgoals))}
               size={[sizeWidth, sizeHeight]}
               separation={(a, b) => (a.parent == b.parent ? 1 : 0.5) / a.depth}
             >
@@ -221,8 +273,6 @@ export class NewGoalTree extends React.Component {
                   })}
 
                   {data.descendants().map((node, key) => {
-                    const width = 40;
-                    const height = 20;
 
                     let top;
                     let left;
@@ -255,33 +305,35 @@ export class NewGoalTree extends React.Component {
                         )}
                         {node.depth !== 0 && (
                           <rect
-                            height={height}
-                            width={width}
-                            y={-height / 2}
-                            x={-width / 2}
+                            height={node_height}
+                            width={23}
+                            y={-node_height / 2}
+                            x={-23 / 2}
                             fill={'#272b4d'}
-                            stroke={node.data.children ? '#03c0dc' : '#26deb0'}
+                            stroke={node.data.subgoals ? '#03c0dc' : '#26deb0'}
                             strokeWidth={1}
-                            strokeDasharray={!node.data.children ? '2,2' : '0'}
-                            strokeOpacity={!node.data.children ? 0.6 : 1}
-                            rx={!node.data.children ? 10 : 0}
+                            strokeDasharray={!node.data.subgoals ? '2,2' : '0'}
+                            strokeOpacity={!node.data.subgoals ? 0.6 : 1}
+                            rx={!node.data.subgoals ? 10 : 0}
                             onClick={() => {
                               node.data.isExpanded = !node.data.isExpanded;
                               console.log(node);
+                              // TODO ENHANCEMENT 21/05/2020 13:06: modal with goal show info
                               this.forceUpdate();
                             }}
                           />
                         )}
-                        <text
-                          dy={'.33em'}
-                          fontSize={9}
-                          fontFamily="Arial"
-                          textAnchor={'middle'}
+                        <title
+                          // dy={'.33em'}
+                          // fontSize={9}
+                          // fontFamily="Arial"
+                          // textAnchor={'middle'}
                           style={{ pointerEvents: 'none' }}
-                          fill={node.depth === 0 ? '#71248e' : node.children ? 'white' : '#26deb0'}
+                          // textLength={node.data.num_title_chars}
+                          // fill={node.depth === 0 ? '#71248e' : node.subgoals ? 'white' : '#26deb0'}
                         >
-                          {node.data.name}
-                        </text>
+                          {node.data.title}
+                        </title>
                       </Group>
                     );
                   })}

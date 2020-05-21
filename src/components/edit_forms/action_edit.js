@@ -37,6 +37,7 @@ export const ActionEdit = props => (
         <DateField source="updated_date"/>
       </FormTab>
 
+
       <FormTab label="Intentions">
         <ReferenceManyField label="Intentions" reference="intentions" target="goal">
           <Datagrid>

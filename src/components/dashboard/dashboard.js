@@ -15,7 +15,7 @@ export default () => (
     <Title title="Welcome to μFunction" />
     <CardContent>
       {/*<DashboardGrid/>*/}
-      <NewGoalTree width={1000} height={900}/>
+      <NewGoalTree width={1500} height={800}/>
     </CardContent>
   </Card>
 );

@@ -1447,6 +1447,11 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/classnames@^2.2.9":
+  version "2.2.10"
+  resolved "https://registry.yarnpkg.com/@types/classnames/-/classnames-2.2.10.tgz#cc658ca319b6355399efc1f5b9e818f1a24bf999"
+  integrity sha512-1UzDldn9GfYYEsWWnn/P4wkTlkZDH7lDb0wBMGbtIQc9zXEQq7FlKBdZUn6OBqD8sKZZ2RQO2mAjGpXiDGoRmQ==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.1.tgz#42995b446db9a48a11a07ec083499a860e9138ff"
@@ -1474,6 +1479,11 @@
   dependencies:
     csstype "^2.0.0"
     indefinite-observable "^1.0.1"
+
+"@types/lodash@^4.14.146":
+  version "4.14.152"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.152.tgz#7e7679250adce14e749304cdb570969f77ec997c"
+  integrity sha512-Vwf9YF2x1GE3WNeUMjT5bTHa2DqgUo87ocdgTScupY2JclZ5Nn7W2RLM/N0+oreexUk8uaVugR81NnTY/jNNXg==
 
 "@types/parse-json@^4.0.0":
   version "4.0.0"
@@ -1555,6 +1565,19 @@
   dependencies:
     lodash.unescape "4.0.1"
     semver "5.5.0"
+
+"@vx/text@^0.0.196":
+  version "0.0.196"
+  resolved "https://registry.yarnpkg.com/@vx/text/-/text-0.0.196.tgz#bfc6a61c279f9fe93a383513ddd30874ef4f11ee"
+  integrity sha512-KhhOtQyzqcZvO/cgYdMrsLLf0LYFT0u1cqJ4j8RVD8JcmTrhHmzFvL9lE6OXADroZxTSOFY3mNIbAPlshIabpw==
+  dependencies:
+    "@types/classnames" "^2.2.9"
+    "@types/lodash" "^4.14.146"
+    "@types/react" "*"
+    classnames "^2.2.5"
+    lodash "^4.17.15"
+    prop-types "^15.7.2"
+    reduce-css-calc "^1.3.0"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
