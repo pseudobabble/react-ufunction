@@ -38,6 +38,7 @@ export const GoalEdit = props => (
         <TextInput source="verb"/>
         <TextInput source="verb_phrase" fullWidth/>
         <DateInput source="target_date"/>
+        <NumberInput source="position" />
         <LongTextInput source="end_state_description" fullWidth/>
         <NumberInput source="urgency" />
         <NumberInput source="importance" />
@@ -57,6 +58,7 @@ export const GoalEdit = props => (
           <TextField source="verb"/>
           <TextField source="verb_phrase" fullWidth/>
           <DateField source="target_date"/>
+          <NumberField source="position"/>
           <TextField source="end_state_description" fullWidth/>
           <NumberField source="urgency" />
           <NumberField source="importance" />

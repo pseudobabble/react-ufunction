@@ -65,9 +65,9 @@ export class NewGoalTree extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      layout: 'cartesian',
+      layout: 'polar',
       orientation: 'horizontal',
-      linkType: 'diagonal',
+      linkType: 'step',
       stepPercent: 0.5,
       error: null,
       isLoaded: false,
@@ -169,8 +169,8 @@ export class NewGoalTree extends React.Component {
             onChange={e => this.setState({ layout: e.target.value })}
             value={layout}
           >
-            <option value="cartesian">cartesian</option>
             <option value="polar">polar</option>
+            <option value="cartesian">cartesian</option>
           </select>
 
           <label>orientation:</label>
@@ -190,8 +190,8 @@ export class NewGoalTree extends React.Component {
             onChange={e => this.setState({ linkType: e.target.value })}
             value={linkType}
           >
-            <option value="diagonal">diagonal</option>
             <option value="step">step</option>
+            <option value="diagonal">diagonal</option>
             <option value="curve">curve</option>
             <option value="line">line</option>
           </select>
@@ -324,16 +324,21 @@ export class NewGoalTree extends React.Component {
                           />
                         )}
                         <title
-                          // dy={'.33em'}
-                          // fontSize={9}
-                          // fontFamily="Arial"
-                          // textAnchor={'middle'}
                           style={{ pointerEvents: 'none' }}
-                          // textLength={node.data.num_title_chars}
-                          // fill={node.depth === 0 ? '#71248e' : node.subgoals ? 'white' : '#26deb0'}
                         >
                           {node.data.title}
                         </title>
+                        <text
+                          dy={'.33em'}
+                          fontSize={9}
+                          fontFamily="Arial"
+                          textAnchor={'middle'}
+                          textLength={node.data.num_title_chars}
+                          fill={node.depth === 0 ? '#71248e' : node.subgoals ? 'white' : '#26deb0'}
+                          style={{ pointerEvents: 'none' }}
+                        >
+                          {node.data.position}
+                        </text>
                       </Group>
                     );
                   })}

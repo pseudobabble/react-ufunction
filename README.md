@@ -1,3 +1,9 @@
+# uFunction
+## A Django-DRF-React Productivity Application
+
+Trying out Marmelab's React Admin against a Django REST API. 
+
+--------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

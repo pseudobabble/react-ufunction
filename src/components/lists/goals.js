@@ -71,6 +71,7 @@ export const GoalList = props => (
       <TextField source="verb_phrase" />
       <DateField source="target_date" />
       <TextField source="end_state_description" />
+      <NumberField source="position"/>
       <NumberField source="urgency" />
       <NumberField source="importance" />
       <NumberField source="eisenhower_score" />
