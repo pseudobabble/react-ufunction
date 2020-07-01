@@ -4332,7 +4332,7 @@ d3-scale@^2.1.0:
     d3-time "1"
     d3-time-format "2"
 
-d3-shape@^1.2.0:
+d3-shape@^1.2.0, d3-shape@^1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.3.7.tgz#df63801be07bc986bc54f63789b4fe502992b5d7"
   integrity sha512-EUkvKjqPFUAZyOlhY5gzCxCeI0Aep04LwIRpsZ/mLFelJiUfnK56jo5JMDSE7yyP2kLSb6LtF+S5chMk7uqPqw==
@@ -12505,16 +12505,6 @@ uuid@^3.0.1, uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-vx@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vx/-/vx-0.0.1.tgz#db2c2686f41afd6332f94762004b1a34d7fe5cad"
-  integrity sha1-2ywmhvQa/WMy+UdiAEsaNNf+XK0=
-  dependencies:
-    bluebird "~2.2.2"
-    cli-color "~0.2.3"
-    minimist "^0.1.0"
-    require-dir "^0.1.0"
-    through "~2.3.4"
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
